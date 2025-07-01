@@ -1,0 +1,49 @@
+<!-- Modal Bootstrap -->
+<div class="modal fade show d-block" tabindex="-1" *ngIf="visible" style="background-color: rgba(0,0,0,0.5);">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        
+        <!-- Header -->
+        <div class="modal-header">
+          <h5 class="modal-title">Seguimiento del Envío #{{ shipmentId }}</h5>
+          <button type="button" class="btn-close" aria-label="Close" (click)="cerrar()"></button>
+        </div>
+  
+        <!-- Body -->
+        <div class="modal-body">
+  
+          <!-- Mostrar spinner mientras se espera el estado inicial -->
+          <div class="text-center my-4" *ngIf="currentEstado === 'Obteniendo estado...'">
+            <div class="spinner-border text-primary" role="status"></div>
+            <p class="mt-3">Cargando estado actual del envío...</p>
+          </div>
+  
+          <!-- Línea de progreso y camión, solo si el estado ya es válido -->
+          <div *ngIf="currentEstado !== 'Obteniendo estado...'" class="position-relative mt-4 mb-5">
+            <!-- Línea base -->
+            <div class="progress-bar-track bg-light position-relative" style="height: 4px;"></div>
+  
+            <!-- Camión -->
+            <div class="truck-icon position-absolute" [ngStyle]="{ left: progressPercent + '%' }" style="top: -20px; transition: left 1s ease;">
+              <i class="fas fa-truck fa-2x text-primary"></i>
+            </div>
+  
+            <!-- Etiquetas de estados -->
+            <div class="d-flex justify-content-between position-absolute w-100 top-100 mt-3">
+              <div *ngFor="let estado of estados" class="text-center flex-fill">
+                <span [class.text-success]="estado === currentEstado">{{ estado }}</span>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Estado final -->
+          <div class="text-center mt-4" *ngIf="currentEstado === 'Entregado'">
+            <i class="fas fa-check-circle fa-3x text-success"></i>
+            <h5 class="mt-2">¡Entrega completada!</h5>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  </div>
+  

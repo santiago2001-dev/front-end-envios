@@ -1,0 +1,31 @@
+<head>
+    <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Modern Sidebar Menu with Internal Toggle</title>
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  </head>
+  <body>
+  <div id="mySidebar" class="sidebar">
+          <div class="sidebar-header">
+              <h3>Menu</h3>
+              <button class="toggle-btn" onclick="toggleNav()">
+                  <i class="fas fa-bars"></i>
+              </button>
+          </div>
+          <a [routerLink]="['/']"><i class="fas fa-home"></i> <span>Envios</span></a>
+          <a [routerLink]="['/ordenar']"><i class="fa-solid fa-truck"></i> <span>Ordenar</span></a>
+
+          <a [routerLink]="['/cotizar']"><i class="fa-solid fa-bell"></i> <span>Cotizar</span></a>
+
+
+
+          
+          <a  ><i class="fas fa-close"   (click)="logout()"></i> <span>Salir</span></a>
+        
+      </div>
+  
+      <div id="main">
+          <h2>Bienvenido Estas Son las Reservas</h2>
+      </div>
+  </body>

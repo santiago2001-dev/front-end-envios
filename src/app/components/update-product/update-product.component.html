@@ -1,0 +1,56 @@
+<br>
+<div class="container mt-5" id="fondo">
+    <h2 class="title"> {{Titulo}}</h2>
+
+    <br>
+    <form class="form" [formGroup]="reservaForm" (submit)="onSubmit()">
+
+        <div class="container mb-3">
+            <label for="origen">Origen</label>
+            <input type="text" formControlName="origen" class="form-control" id="origen" placeholder="Ciudad de origen" required>
+        </div>
+
+        <div class="container mb-3">
+            <label for="destino">Destino</label>
+            <input type="text" formControlName="destino" class="form-control" id="destino" placeholder="Ciudad de destino" required>
+        </div>
+
+        <div class="container mb-3">
+            <label for="peso">Peso (kg)</label>
+            <input type="number" formControlName="peso" class="form-control" id="peso" placeholder="Peso del paquete" required>
+        </div>
+
+        <div class="container mb-3">
+            <label for="alto">Alto (cm)</label>
+            <input type="number" formControlName="alto" class="form-control" id="alto" placeholder="Altura del paquete" required>
+        </div>
+
+        <div class="container mb-3">
+            <label for="ancho">Ancho (cm)</label>
+            <input type="number" formControlName="ancho" class="form-control" id="ancho" placeholder="Ancho del paquete" required>
+        </div>
+
+        <div class="container mb-3">
+            <label for="largo">Largo (cm)</label>
+            <input type="number" formControlName="largo" class="form-control" id="largo" placeholder="Largo del paquete" required>
+        </div>
+
+        <div class="container mb-3">
+            <label for="quotedValue">Valor cotizado</label>
+            <input type="number" formControlName="quotedValue" class="form-control" id="quotedValue" placeholder="Valor cotizado" required>
+        </div>
+
+        
+        <div class="container mb-3">
+            <label for="numeroNotificacion">Número de notificación</label>
+            <input type="text" formControlName="numeroNotificacion" class="form-control" id="numeroNotificacion" placeholder="Número de notificación (+57...)" required>
+        </div>
+
+        <div class="container mb-3">
+            <button class="btn btn-dark btn-sm">Enviar</button>
+            <button style="margin-left: 5px;" class="btn btn-dark btn-sm" routerLink="/">Volver</button>
+        </div>
+
+        <br>
+    </form>
+</div>
