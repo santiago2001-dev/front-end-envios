@@ -50,7 +50,12 @@ export class ListProductsComponent implements OnInit {
           icon: 'error',
           title: 'Sin conexión a la base de datos ',
         
-        })
+        });
+        swal.fire({
+          icon: 'warning',
+          title: 'no se encontraron envios',
+          text: 'Por favor, intente más tarde',
+        });
       }
     )
 
